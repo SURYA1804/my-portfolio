@@ -1,0 +1,20 @@
+.projects-section {
+  h2 {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  }
+
+  img {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+
+  .btn-outline-info {
+    margin-top: 10px;
+  }
+
+  .row {
+    margin-bottom: 4rem;
+  }
+}

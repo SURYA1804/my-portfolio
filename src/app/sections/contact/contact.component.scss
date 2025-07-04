@@ -1,0 +1,17 @@
+.contact-section {
+  h2 {
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  }
+
+  a {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.2);
+      color: #00ffff;
+    }
+  }
+
+  i {
+    transition: color 0.3s;
+  }
+}

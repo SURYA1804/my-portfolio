@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  background-color: #1A0B1F;
+  color: #ffffff;
+  font-family: 'Plus Jakarta Sans';
+  min-height: 100vh;
+  font-weight: 500;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(10, 10, 25, 0.85); // dark overlay
+  z-index: -1;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+section {
+  scroll-margin-top: 100px; 
+}

@@ -1,0 +1,62 @@
+.work-section {
+  h2 {
+    font-weight: 600;
+    color: #ccffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  }
+
+  .card {
+    background-color: #111122;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      border-color: #00ffff;
+    }
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    color: #00ffff;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-right: 8px;
+    }
+  }
+
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .badge {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    background: linear-gradient(45deg, #036b6b, #6f00ff);
+    animation: pulseBadge 3s infinite ease-in-out;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  }
+
+  @keyframes pulseBadge {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.85;
+    }
+  }
+}

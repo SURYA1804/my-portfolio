@@ -1,0 +1,62 @@
+#skills {
+  h2 {
+    font-weight: 600;
+    color: #ccffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    margin-bottom: 2rem;
+  }
+
+  .skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(145deg, #161625, #1a1a2e);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
+    color: #ffffff;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+  }
+
+  .card-title {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+.skill-card i {
+  font-size: 1rem;
+  color: #00ffff;
+}
+
+.skill-card span.text-muted {
+  color: #ffffff !important;
+  font-size: 1rem;
+}
+
+
+  .progress {
+    height: 8px;
+    background-color: #2a2a40;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+
+.progress-bar {
+  height: 100%;
+  transition: width 0.6s ease-in-out;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+
+  .badge {
+    font-size: 0.75rem;
+    background-color: #00ffff;
+    color: #000;
+    border-radius: 12px;
+    padding: 0.4rem 0.7rem;
+  }
+}

@@ -1,0 +1,16 @@
+<section id="projects" class="container py-5 projects-section text-light">
+  <h2 class="text-center mb-5 fw-bold" style="color: #CCFFFF;">Featured Project</h2>
+
+  <div class="row align-items-center mb-5" *ngFor="let project of projects; let i = index">
+    <div class="col-md-6 order-md-{{ i % 2 === 0 ? 1 : 2 }}">
+      <img [src]="project.image" class="img-fluid rounded shadow" alt="Project image" />
+    </div>
+    <div class="col-md-6 order-md-{{ i % 2 === 0 ? 2 : 1 }}">
+      <h4 class="text-info">{{ project.title }}</h4>
+      <p class="text-muted">{{ project.description }}</p>
+      <a [href]="project.link" target="_blank" class="btn btn-outline-info btn-sm">
+        View Project <i class="bi bi-box-arrow-up-right ms-1"></i>
+      </a>
+    </div>
+  </div>
+</section>

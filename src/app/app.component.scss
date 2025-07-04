@@ -1,0 +1,69 @@
+@keyframes rainbowLine {
+  0%   { background-color: #00ffff; }  // Cyan
+  25%  { background-color: #ff00ff; }  // Magenta
+  50%  { background-color: #ffff00; }  // Yellow
+  75%  { background-color: #00ff00; }  // Green
+  100% { background-color: #00ffff; }  // Back to Cyan
+}
+
+@keyframes textcolor {
+  0%   { color: #00ffff; }  // Cyan
+  25%  { color: #ff00ff; }  // Magenta
+  50%  { color: #ffff00; }  // Yellow
+  75%  { color: #00ff00; }  // Green
+  100% { color: #00ffff; }  // Back to Cyan
+}
+
+.navbar-custom {
+  background-color: #1A0B2E !important;
+
+  .navbar-brand {
+  animation: textcolor 5s linear infinite;
+  transition: transform 0.5s ease;
+  display: inline-block;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+
+.nav-link {
+  color: #ffffff !important;
+  position: relative;
+  text-decoration: none;
+  transition: color 1s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #00ffff;
+    transition: width 1s ease;
+    animation: rainbowLine 5s linear infinite;
+  }
+
+  &.active-link::after {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #00ffff !important;
+  }
+}
+
+  .navbar-toggler {
+    transition: transform 1s ease;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    .navbar-toggler-icon {
+      filter: invert(1); 
+    }
+  }
+}
