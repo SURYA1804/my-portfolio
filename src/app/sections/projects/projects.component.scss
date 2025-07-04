@@ -1,7 +1,11 @@
 .projects-section {
-  h2 {
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-  }
+ h2 {
+  font-weight: 600;
+  color: #ccffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
 
   img {
     transition: transform 0.3s ease;
@@ -17,4 +21,14 @@
   .row {
     margin-bottom: 4rem;
   }
+
+.card-title {
+  font-size: 1rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+}
+
+
 }

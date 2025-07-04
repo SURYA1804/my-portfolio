@@ -10,15 +10,15 @@ import { CommonModule } from '@angular/common';
 export class ProjectsComponent {
   projects = [
     {
-      title: 'Spotify Data Visualizer',
-      description: 'A web app that displays personalized Spotify statistics using Chart.js and the Spotify API.',
-      image: 'assets/project-spotify.png',
-      link: 'https://github.com/yourusername/spotify-visualizer'
+      title: 'Bus Ticket Booking System',
+      description: 'A bus ticket booking system that lets users view available seats, make reservations, and get instant confirmations. It efficiently manages bus schedules and seat bookings, providing a user-friendly interface for easy navigation. The system ensures accurate reservation handling and real-time updates, enhancing the overall booking experience.',
+      image: 'assets/BusTicketProject.jpg',
+      link: 'https://https://github.com/SURYA1804/Bus_Full_Project'
     },
     {
       title: 'Portfolio Website',
       description: 'Personal portfolio site built with Angular and Bootstrap to showcase my skills and projects.',
-      image: 'assets/project-portfolio.png',
+      image: 'assets/ProtfolioProject.png',
       link: 'https://yourname.dev'
     }
   ];
