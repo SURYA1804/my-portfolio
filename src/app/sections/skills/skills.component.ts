@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SkillsComponent {
   skills = [
-  { name: 'Dotnet Core', level: 95, color: '#8e44ad', icon: '/assets/DotnetLogo.png'  ,  isImage: true },
+  { name: 'Dotnet Core', level: 95, color: '#8e44ad', icon: 'assets/DotnetLogo.png'  ,  isImage: true },
   { name: 'Angular', level: 90, color: '#dd1b16', icon: 'fa-brands fa-angular',  isImage: false },
   { name: 'SQL', level: 85, color: '#2980b9', icon: 'fa-solid fa-database',  isImage: false },
   { name: 'Data Science', level: 60, color: '#27ae60', icon: 'fa-solid fa-flask-vial',  isImage: false },
