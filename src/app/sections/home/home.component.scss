@@ -6,82 +6,59 @@
     text-shadow: 0 0 10px #0ff;
   }
 
-  img {
-    border: 3px solid #fff;
-    transition: transform 0.3s ease;
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
-
-  a {
-    color: #00bfff;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
   .avatar-wrapper {
-  width: 180px;
-  height: 160px;
-  background-image: url('/assets/Gradient.png'); 
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-  display: flex;
-  align-self: flex-end;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  margin: auto; 
-//  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-}
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle at center, #7a3cbe 50%, #4a1f80 50%);    
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 0 0 20px #0ff3;
+  }
 
-.avatar-img {
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  z-index: 2;
-}
-.arrow-image {
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-.custom-btn-group a {
-  padding: 0.6rem 1.4rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
+  .avatar-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 3px solid #0ff; 
+  }
 
-.custom-btn-outline {
-  color: #00ffff;
-  border: 1px solid #00ffff;
-  background-color: rgba(0, 255, 255, 0.05);
-}
+  .custom-btn-group a,
+  .custom-btn-outline,
+  .custom-btn-solid {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+  }
 
-.custom-btn-outline:hover {
-  background-color: #00ffff;
-  color: #000;
-  box-shadow: 0 0 10px #00ffff;
-}
+  .custom-btn-outline {
+    color: #00ffff;
+    border: 1px solid #00ffff;
+    background-color: rgba(0, 255, 255, 0.05);
 
-.custom-btn-solid {
-  background-color: #00ffff;
-  color: #000;
-  border: 1px solid transparent;
-}
+    &:hover {
+      background-color: #00ffff;
+      color: #000;
+      box-shadow: 0 0 10px #00ffff;
+    }
+  }
 
-.custom-btn-solid:hover {
-  background-color: transparent;
-  border: 1px solid #00ffff;
-  color: #00ffff;
-  box-shadow: 0 0 10px #00ffff;
-}
+  .custom-btn-solid {
+    background-color: #00ffff;
+    color: #000;
+    border: 1px solid transparent;
 
-
-
+    &:hover {
+      background-color: transparent;
+      border: 1px solid #00ffff;
+      color: #00ffff;
+      box-shadow: 0 0 10px #00ffff;
+    }
+  }
 }
