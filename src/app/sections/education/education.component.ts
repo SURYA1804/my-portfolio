@@ -13,9 +13,9 @@ educationItems = [
   {
     degree: 'MCA - NLP & LLM',
     institution: 'Jain University',
-    duration: '2025 – 2027',
+    duration: 'Pursuing',
     location: 'Bangalore,Karnataka',
-    percentage: '82.2%'
+    percentage: '--'
   },
   {
     degree: 'Bsc- Artificial Intelligence & Data Science',
