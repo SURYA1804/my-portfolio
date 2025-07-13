@@ -11,12 +11,12 @@
     </button>
     <div class="collapse navbar-collapse" id="portfolioNav">
       <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'home'" href="#home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'work'" href="#work">Work</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'skills'" href="#skills">Skills</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'education'" href="#education">Education</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'projects'" href="#projects">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'contact'" href="#contact">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'home'"(click)="setActiveSection('home')"  href="#home">Home</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'work'"(click)="setActiveSection('work')" href="#work">Work</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'skills'" (click)="setActiveSection('skills')" href="#skills">Skills</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'education'"(click)="setActiveSection('education')" href="#education">Education</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'projects'"(click)="setActiveSection('projects')" href="#projects">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'contact'"(click)="setActiveSection('contact')" href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>

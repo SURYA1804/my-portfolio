@@ -38,7 +38,7 @@ onScroll(): void {
       const rect = el.getBoundingClientRect();
       const offset = window.innerHeight / 2;
 
-      if (rect.top <= offset && rect.bottom >= offset) {
+      if (rect.top <= offset && rect.bottom >= 150) {
         this.activeSection = section;
         foundActive = true;
         break;
@@ -48,11 +48,15 @@ onScroll(): void {
 
   const scrolledToBottom =
     window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
-
   if (scrolledToBottom) {
     this.activeSection = 'contact';
   }
 }
+setActiveSection(section: string) {
+  this.activeSection = section;
+  this.autoCloseNavbar(); 
+}
+
 autoCloseNavbar() {
   const navbar = document.getElementById('portfolioNav');
   const toggleBtn = document.querySelector('.navbar-toggler');
