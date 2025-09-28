@@ -16,10 +16,10 @@ export class ProjectsComponent {
       link: 'https://https://github.com/SURYA1804/Bus_Full_Project'
     },
     {
-      title: 'Portfolio Website',
-      description: 'Personal portfolio site built with Angular and Bootstrap to showcase my skills and projects.',
-      image: 'assets/ProtfolioProject.png',
-      link: 'https://yourname.dev'
+      title: 'Finance System',
+      description: 'Finance System that lets users to use it like finance application and staffs to use it internal application for their day to day works in company and manager to moniter and manage the activity of staffs and users.',
+      image: 'assets/FinanceSystem.png',
+      link: 'https://financesystem-ktqj.onrender.com'
     }
   ];
 }
