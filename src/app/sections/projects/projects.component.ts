@@ -17,7 +17,7 @@ export class ProjectsComponent {
     },
     {
       title: 'Finance System',
-      description: 'Finance System that lets users to use it like finance application and staffs to use it internal application for their day to day works in company and manager to moniter and manage the activity of staffs and users.',
+      description: 'Developed a complete finance management system with a smart chatbot that helps users handle their daily banking tasks easily. It also supports staff in managing their routine work and gives managers clear insights to monitor team and customer activities through simple, natural conversations.',
       image: 'assets/FinanceSystem.png',
       link: 'https://financesystem-ktqj.onrender.com'
     }
