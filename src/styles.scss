@@ -1,11 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
-  background-color: #1A0B1F;
+  background-color: #0a0a1a;
   color: #ffffff;
-  font-family: 'Plus Jakarta Sans';
+  font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   font-weight: 500;
+  position: relative;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -15,14 +16,55 @@ body::before {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(10, 10, 25, 0.85); // dark overlay
-  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(122, 60, 190, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a0a1a 0%, #1A0B1F 100%);
+  z-index: -2;
 }
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0px, transparent 1px, transparent 2px, rgba(255, 255, 255, 0.03) 3px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0px, transparent 1px, transparent 2px, rgba(255, 255, 255, 0.03) 3px);
+  z-index: -1;
+  opacity: 0.3;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-
 section {
-  scroll-margin-top: 100px; 
+  scroll-margin-top: 100px;
+}
+
+// Custom Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(26, 11, 31, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #7a3cbe, #00ffff);
+  border-radius: 10px;
+  
+  &:hover {
+    background: linear-gradient(180deg, #00ffff, #7a3cbe);
+  }
+}
+
+// Selection Styling
+::selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: #ffffff;
 }

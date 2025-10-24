@@ -1,30 +1,111 @@
-<section id="skills" class="container py-5 text-light">
-  <h2 class="text-center mb-5 fw-bold" style="color: #CCFFFF;">Skills</h2>
+<section id="skills" class="container py-5 skills-section">
+  <!-- Section Header -->
+  <div class="section-header text-center mb-5">
+    <!-- <span class="section-tag">Technical Expertise</span> -->
+    <h2 class="section-title">Skills & Technologies</h2>
+    <p class="section-subtitle">Crafting solutions with modern tools and frameworks</p>
+  </div>
 
-<div class="d-flex flex-wrap justify-content-center gap-4"> 
-  <div class="skill-card p-3 rounded shadow-sm" *ngFor="let skill of skills">
-    <div class="d-flex justify-content-between small mb-2 align-items-center">
-      <div class="d-flex align-items-center gap-2">
-        <ng-container *ngIf="skill.isImage; else fontIcon">
-          <img [src]="skill.icon" alt="{{ skill.name }}" width="18" height="18" />
-        </ng-container>
-        <ng-template #fontIcon>
-          <i [class]="skill.icon"></i>
-        </ng-template>
-        <span class="fw-semibold">{{ skill.name }}</span>
+  <!-- Skills Grid -->
+  <div class="skills-container">
+    <!-- Skill Card -->
+    <div 
+      class="skill-card glass-card"
+      *ngFor="let skill of skills; let i = index"
+      [style.animation-delay]="i * 0.1 + 's'"
+    >
+      <!-- Card Inner -->
+      <div class="skill-card-inner">
+        <!-- Icon Section -->
+        <div class="skill-icon-wrapper">
+          <div class="icon-background"></div>
+          <div class="icon-content">
+            <ng-container *ngIf="skill.isImage; else fontIcon">
+              <img 
+                [src]="skill.icon" 
+                [alt]="skill.name" 
+                class="skill-icon-img"
+              />
+            </ng-container>
+            <ng-template #fontIcon>
+              <i [class]="skill.icon" class="skill-icon-font"></i>
+            </ng-template>
+          </div>
+          <div class="icon-glow" [style.background]="'radial-gradient(circle, ' + skill.color + '40, transparent)'"></div>
+        </div>
+
+        <!-- Skill Info -->
+        <div class="skill-info">
+          <div class="skill-header">
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <span class="skill-percentage">{{ skill.level }}%</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-container">
+            <div class="progress-track">
+              <div 
+                class="progress-fill"
+                [style.width.%]="skill.level"
+                [style.background]="getProgressGradient(skill.color)"
+                [attr.data-level]="skill.level"
+              >
+                <div class="progress-glow"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Proficiency Label -->
+          <div class="proficiency-label">
+            <span class="proficiency-text">{{ getProficiencyLabel(skill.level) }}</span>
+          </div>
+        </div>
       </div>
-      <span class="text-muted ms-2">{{ skill.level }}%</span>
-    </div>
-    <div class="progress" style="height: 8px;">
-      <div
-        class="progress-bar"
-        role="progressbar"
-        [style.width.%]="skill.level"
-        [style.background]="skill.color"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      ></div>
+
+      <!-- Card Decorations -->
+      <div class="card-shine"></div>
+      <div class="card-border-glow" [style.box-shadow]="'0 0 20px ' + skill.color + '30'"></div>
     </div>
   </div>
-</div>
+
+  <!-- Stats Summary (Optional Enhancement) -->
+  <!-- <div class="skills-stats glass-card mt-5">
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon">🎯</div>
+          <h3 class="stat-value">{{ skills.length }}+</h3>
+          <p class="stat-label">Technologies</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon">⚡</div>
+          <h3 class="stat-value">{{ getAverageLevel() }}%</h3>
+          <p class="stat-label">Avg. Proficiency</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon">💻</div>
+          <h3 class="stat-value">{{ getExpertCount() }}</h3>
+          <p class="stat-label">Expert Level</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item">
+          <div class="stat-icon">🚀</div>
+          <h3 class="stat-value">1+</h3>
+          <p class="stat-label">Years Experience</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Background Decorations -->
+  <div class="skills-background">
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+  </div>
 </section>

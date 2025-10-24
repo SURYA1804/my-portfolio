@@ -25,45 +25,82 @@ export class AppComponent {
   title = 'my-portfolio';
   currentYear = new Date().getFullYear();
   activeSection = 'home';
+  private lastScrollTop = 0;
 
- @HostListener('window:scroll', [])
-onScroll(): void {
-  const sections = ['home', 'work', 'skills', 'education', 'projects', 'contact'];
-  let foundActive = false;
-  this.autoCloseNavbar();
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.updateActiveSection();
+    this.updateScrollProgress();
+    this.handleNavbarScroll();
+    this.autoCloseNavbar();
+  }
 
-  for (const section of sections) {
-    const el = document.getElementById(section);
-    if (el) {
-      const rect = el.getBoundingClientRect();
-      const offset = window.innerHeight / 2;
+  // Update active section based on scroll position
+  private updateActiveSection(): void {
+    const sections = ['home', 'work', 'skills', 'education', 'projects', 'contact'];
+    let foundActive = false;
 
-      if (rect.top <= offset && rect.bottom >= 150) {
-        this.activeSection = section;
-        foundActive = true;
-        break;
+    for (const section of sections) {
+      const el = document.getElementById(section);
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        const offset = window.innerHeight / 2;
+
+        if (rect.top <= offset && rect.bottom >= 150) {
+          this.activeSection = section;
+          foundActive = true;
+          break;
+        }
       }
+    }
+
+    // Check if scrolled to bottom
+    const scrolledToBottom =
+      window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
+    if (scrolledToBottom) {
+      this.activeSection = 'contact';
     }
   }
 
-  const scrolledToBottom =
-    window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
-  if (scrolledToBottom) {
-    this.activeSection = 'contact';
+  // Update scroll progress bar
+  private updateScrollProgress(): void {
+    const scrollProgress = document.querySelector('.scroll-progress') as HTMLElement;
+    if (scrollProgress) {
+      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      scrollProgress.style.setProperty('--scroll-progress', `${scrolled}%`);
+    }
   }
-}
-setActiveSection(section: string) {
-  this.activeSection = section;
-  this.autoCloseNavbar(); 
-}
 
-autoCloseNavbar() {
-  const navbar = document.getElementById('portfolioNav');
-  const toggleBtn = document.querySelector('.navbar-toggler');
+  // Add scrolled class to navbar
+  private handleNavbarScroll(): void {
+    const navbar = document.querySelector('.navbar-custom');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if (navbar?.classList.contains('show') && toggleBtn) {
-    new Collapse(navbar, { toggle: false }).hide();
+    if (navbar) {
+      if (scrollTop > 100) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    }
+
+    this.lastScrollTop = scrollTop;
   }
-}
 
+  // Set active section manually
+  setActiveSection(section: string): void {
+    this.activeSection = section;
+    this.autoCloseNavbar();
+  }
+
+  // Auto-close navbar on mobile
+  autoCloseNavbar(): void {
+    const navbar = document.getElementById('portfolioNav');
+    const toggleBtn = document.querySelector('.navbar-toggler');
+
+    if (navbar?.classList.contains('show') && toggleBtn) {
+      new Collapse(navbar, { toggle: false }).hide();
+    }
+  }
 }

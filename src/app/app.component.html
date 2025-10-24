@@ -1,26 +1,89 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-custom">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="#">Surya Prakash M</a>
+    <!-- Enhanced Brand with Icon -->
+  <a class="navbar-brand fw-bold" href="#">
+  <span class="brand-icon">✨</span>
+  <span class="brand-text">Surya Prakash M</span>
+</a>
+    
+    <!-- Enhanced Toggler -->
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#portfolioNav"
+      aria-controls="portfolioNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon"></span>
+      <span class="toggler-line"></span>
+      <span class="toggler-line"></span>
+      <span class="toggler-line"></span>
     </button>
+    
     <div class="collapse navbar-collapse" id="portfolioNav">
       <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'home'"(click)="setActiveSection('home')"  href="#home">Home</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'work'"(click)="setActiveSection('work')" href="#work">Work</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'skills'" (click)="setActiveSection('skills')" href="#skills">Skills</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'education'"(click)="setActiveSection('education')" href="#education">Education</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'projects'"(click)="setActiveSection('projects')" href="#projects">Projects</a></li>
-              <li class="nav-item"><a class="nav-link" [class.active-link]="activeSection === 'contact'"(click)="setActiveSection('contact')" href="#contact">Contact</a></li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active-link]="activeSection === 'home'"
+             (click)="setActiveSection('home')" 
+             href="#home">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-text">Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active-link]="activeSection === 'work'"
+             (click)="setActiveSection('work')" 
+             href="#work">
+            <span class="nav-icon">💼</span>
+            <span class="nav-text">Work</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active-link]="activeSection === 'skills'"
+             (click)="setActiveSection('skills')" 
+             href="#skills">
+            <span class="nav-icon">⚡</span>
+            <span class="nav-text">Skills</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active-link]="activeSection === 'education'"
+             (click)="setActiveSection('education')" 
+             href="#education">
+            <span class="nav-icon">🎓</span>
+            <span class="nav-text">Education</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [class.active-link]="activeSection === 'projects'"
+             (click)="setActiveSection('projects')" 
+             href="#projects">
+            <span class="nav-icon">🚀</span>
+            <span class="nav-text">Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-cta" 
+             [class.active-link]="activeSection === 'contact'"
+             (click)="setActiveSection('contact')" 
+             href="#contact">
+            <span class="nav-text">Contact</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
+  
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress"></div>
 </nav>
+
 <br/>
 
 <app-home></app-home>
@@ -30,6 +93,97 @@
 <app-projects></app-projects>
 <app-contact></app-contact>
 
-<footer class="bg-dark text-light text-center py-3 mt-5">
-  <small>&copy; {{ currentYear }} Surya Prakash M. All rights reserved.</small>
+<!-- Premium Footer -->
+<footer class="footer-premium">
+  <div class="container">
+    <!-- Footer Main Content -->
+    <div class="footer-main">
+      <div class="row g-4">
+        <!-- Brand Section -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <h3 class="footer-logo">
+              <span class="logo-icon">✦</span>
+              Surya Prakash M
+            </h3>
+            <p class="footer-tagline">
+              Backend Developer crafting elegant solutions with .NET, Python, and AI
+            </p>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/in/suryaprakash-m" class="social-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/Surya1804" class="social-link"target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://www.instagram.com/alter._ego._18" class="social-link" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="mailto:suryaprakashm246@gmail.com" target="_blank" class="social-link" aria-label="Email">
+                <i class="far fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+          </ul>
+        </div>
+        
+        <!-- Projects -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="assets/NewResume.pdf" target="_blank">Resume</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info -->
+        <div class="col-lg-4 col-md-6">
+          <h4 class="footer-heading">Get In Touch</h4>
+          <div class="footer-contact">
+            <p class="contact-item">
+              <span class="contact-icon">📧</span>
+              <a href="mailto:mailto:suryaprakashm246@gmail.com">suryaprakashm246&#64;gmail.com</a>
+            </p>
+            <p class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>Coimbatore, India</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">&copy; {{ currentYear }} Surya Prakash M. All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <span class="separator">•</span>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Background Effects -->
+  <div class="footer-background">
+    <div class="footer-glow footer-glow-1"></div>
+    <div class="footer-glow footer-glow-2"></div>
+  </div>
 </footer>

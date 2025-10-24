@@ -1,25 +1,147 @@
-<section id="education" class="container py-5 text-light">
-  <h2 class="text-center mb-5 fw-bold" style="color: #CCFFFF;">Education</h2>
+<section id="education" class="container py-5 education-section">
+  <!-- Section Header -->
+  <div class="section-header text-center mb-5">
+    <!-- <span class="section-tag">Academic Background</span> -->
+    <h2 class="section-title">Education</h2>
+    <p class="section-subtitle">Continuous learning and academic excellence</p>
+  </div>
 
-  <div class="row justify-content-center g-4">
-    <div class="col-md-6 col-lg-4" *ngFor="let edu of educationItems">
-      <div class="card h-100 bg-gradient border-0 shadow card-hover-effect" style="background-color: #1a1a2e;">
-        <div class="card-body d-flex flex-column h-100">
-          <div>
-            <h5 class="card-title text-info fw-semibold mb-2">
-              <i class="bi bi-mortarboard-fill me-2"></i>{{ edu.degree }}
-            </h5>
-            <p class="text-light mb-1">{{ edu.institution }}</p>
-            <p class="text-white small mb-2"><strong>Percentage:</strong> {{ edu.percentage }}</p>
-          </div>
+  <!-- Education Timeline -->
+  <div class="education-timeline">
+    <div class="timeline-connector"></div>
 
-          <!-- Footer pushed to bottom -->
-          <div class="mt-auto d-flex justify-content-between align-items-center">
-            <span class="badge bg-secondary px-3 py-2">{{ edu.duration }}</span>
-            <small class="text-primary">{{ edu.location }}</small>
+    <div 
+      class="education-item"
+      *ngFor="let edu of educationItems; let i = index"
+      [attr.data-index]="i"
+      [style.animation-delay]="i * 0.2 + 's'"
+    >
+      <!-- Timeline Node -->
+      <div class="timeline-node">
+        <div class="node-outer">
+          <div class="node-inner">
+            <i class="fas fa-graduation-cap"></i>
           </div>
         </div>
+        <div class="node-pulse"></div>
       </div>
+
+      <!-- Education Card -->
+      <div class="education-card glass-card">
+        <!-- Status Badge for Current/Pursuing -->
+        <div class="pursuing-badge" *ngIf="edu.duration === 'Pursuing'">
+          <span class="badge-pulse"></span>
+          In Progress
+        </div>
+
+        <!-- Card Header -->
+        <div class="card-header-edu">
+          <div class="degree-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="degree-info">
+            <h3 class="degree-title">{{ edu.degree }}</h3>
+            <p class="institution-name">
+              <i class="fas fa-university"></i>
+              {{ edu.institution }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Card Body -->
+        <div class="card-body-edu">
+          <div class="info-grid">
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div class="info-content">
+                <span class="info-label">Location</span>
+                <span class="info-value">{{ edu.location }}</span>
+              </div>
+            </div>
+            
+            <div class="info-item">
+              <span class="info-icon">📅</span>
+              <div class="info-content">
+                <span class="info-label">Duration</span>
+                <span class="info-value">{{ edu.duration }}</span>
+              </div>
+            </div>
+
+            <!-- <div class="info-item" *ngIf="edu.percentage !== '--'">
+              <span class="info-icon">📊</span>
+              <div class="info-content">
+                <span class="info-label">Performance</span>
+                <span class="info-value">{{ edu.percentage }}</span>
+              </div>
+            </div> -->
+          </div>
+
+          <!-- Progress Bar for Percentage -->
+          <div class="performance-bar" *ngIf="edu.percentage !== '--'">
+            <div class="bar-label">
+              <span>Academic Score</span>
+              <span class="bar-percentage">{{ edu.percentage }}</span>
+            </div>
+            <div class="bar-track">
+              <div 
+                class="bar-fill"
+                [style.width]="edu.percentage"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Footer with Specialization -->
+        <div class="card-footer-edu" *ngIf="edu.specialization">
+          <div class="specialization-badge">
+            <i class="fas fa-star"></i>
+            {{ edu.specialization }}
+          </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="card-glow card-glow-1"></div>
+        <div class="card-glow card-glow-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education Stats Summary -->
+  <!-- <div class="education-stats glass-card mt-5">
+    <div class="row g-4 text-center">
+      <div class="col-md-4 col-6">
+        <div class="stat-box">
+          <div class="stat-icon-large">🎓</div>
+          <h3 class="stat-number">{{ educationItems.length }}</h3>
+          <p class="stat-text">Degrees</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="stat-box">
+          <div class="stat-icon-large">⭐</div>
+          <h3 class="stat-number">{{ getAveragePercentage() }}%</h3>
+          <p class="stat-text">Avg. Performance</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-12">
+        <div class="stat-box">
+          <div class="stat-icon-large">🏆</div>
+          <h3 class="stat-number">{{ getHighestPercentage() }}%</h3>
+          <p class="stat-text">Highest Score</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- Background Effects -->
+  <div class="education-background">
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="floating-icons">
+      <i class="float-icon fas fa-book" style="top: 15%; left: 10%;"></i>
+      <i class="float-icon fas fa-microscope" style="top: 25%; right: 15%;"></i>
+      <i class="float-icon fas fa-laptop-code" style="bottom: 20%; left: 20%;"></i>
+      <i class="float-icon fas fa-brain" style="bottom: 30%; right: 10%;"></i>
     </div>
   </div>
 </section>

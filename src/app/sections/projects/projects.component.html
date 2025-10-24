@@ -1,16 +1,146 @@
-<section id="projects" class="container py-5 text-light projects-section">
-  <h2 class="text-center mb-5 fw-bold" style="color: #CCFFFF;">Featured Project</h2>
+<section id="projects" class="container py-5 projects-section">
+  <!-- Section Header -->
+  <div class="section-header text-center mb-5">
+    <!-- <span class="section-tag">Portfolio Showcase</span> -->
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">Transforming ideas into elegant, functional solutions</p>
+  </div>
 
-  <div class="row align-items-center mb-5" *ngFor="let project of projects; let i = index">
-    <div class="col-md-6 order-md-{{ i % 2 === 0 ? 1 : 2 }}">
-      <img [src]="project.image" class="img-fluid rounded shadow" alt="Project image" />
+  <!-- Projects Grid -->
+  <div class="projects-container">
+    <div 
+      class="project-item"
+      *ngFor="let project of projects; let i = index"
+      [class.reverse]="i % 2 !== 0"
+      [attr.data-index]="i"
+      [style.animation-delay]="i * 0.2 + 's'"
+    >
+      <!-- Project Card -->
+      <div class="project-card glass-card">
+        <!-- Project Image Container -->
+        <div class="project-image-wrapper">
+          <div class="image-container">
+            <img 
+              [src]="project.image" 
+              [alt]="project.title"
+              class="project-image"
+            />
+            <!-- Image Overlay -->
+            <div class="image-overlay">
+              <div class="overlay-content">
+                <a [href]="project.link" target="_blank" class="preview-btn">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>View Live</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Project Number Badge -->
+          <div class="project-number">{{ '0' + (i + 1) }}</div>
+        </div>
+
+        <!-- Project Info -->
+        <div class="project-info">
+          <!-- Project Header -->
+          <div class="project-header">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <div class="project-meta">
+              <span class="meta-item" *ngIf="project.year">
+                <i class="fas fa-calendar"></i>
+                {{ project.year }}
+              </span>
+              <span class="meta-item" *ngIf="project.category">
+                <i class="fas fa-tag"></i>
+                {{ project.category }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Description -->
+          <div class="project-description">
+            <p>{{ project.description }}</p>
+          </div>
+
+          <!-- Tech Stack -->
+          <div class="tech-stack" *ngIf="project.technologies">
+            <h4 class="tech-heading">Technologies Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag" *ngFor="let tech of project.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Project Features -->
+          <div class="project-features" *ngIf="project.features">
+            <h4 class="features-heading">Key Features</h4>
+            <ul class="features-list">
+              <li *ngFor="let feature of project.features">
+                <i class="fas fa-check-circle"></i>
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Project Actions -->
+          <div class="project-actions">
+            <a [href]="project.link" target="_blank" class="btn-primary-custom">
+              <i class="fas fa-globe"></i>
+              Live Demo
+            </a>
+            <a [href]="project.github" target="_blank" class="btn-secondary-custom" *ngIf="project.github">
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+
+        <!-- Decorative Elements -->
+        <div class="card-gradient card-gradient-1"></div>
+        <div class="card-gradient card-gradient-2"></div>
+      </div>
     </div>
-    <div class="col-md-6 order-md-{{ i % 2 === 0 ? 2 : 1 }}">
-      <h4 class="text-info">{{ project.title }}</h4>
-      <p class="text-white">{{ project.description }}</p>
-      <a [href]="project.link" target="_blank" class="btn btn-outline-info btn-sm">
-        View Project <i class="bi bi-box-arrow-up-right ms-1"></i>
-      </a>
+  </div>
+
+  <!-- Project Stats
+  <div class="projects-stats glass-card mt-5">
+    <div class="row g-4 text-center">
+      <div class="col-md-3 col-6">
+        <div class="stat-item-project">
+          <div class="stat-icon-project">🚀</div>
+          <h3 class="stat-value-project">{{ projects.length }}+</h3>
+          <p class="stat-label-project">Projects Completed</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item-project">
+          <div class="stat-icon-project">💻</div>
+          <h3 class="stat-value-project">{{ getTotalTechnologies() }}+</h3>
+          <p class="stat-label-project">Technologies</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item-project">
+          <div class="stat-icon-project">⭐</div>
+          <h3 class="stat-value-project">100%</h3>
+          <p class="stat-label-project">Success Rate</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="stat-item-project">
+          <div class="stat-icon-project">🎯</div>
+          <h3 class="stat-value-project">2+</h3>
+          <p class="stat-label-project">Years Experience</p>
+        </div>
+      </div>
     </div>
+  </div> -->
+
+  <!-- Background Effects -->
+  <div class="projects-background">
+    <div class="bg-orb-project bg-orb-1"></div>
+    <div class="bg-orb-project bg-orb-2"></div>
+    <div class="bg-orb-project bg-orb-3"></div>
   </div>
 </section>

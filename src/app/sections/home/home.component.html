@@ -1,44 +1,62 @@
-<!-- Removed: <img src="assets/Arrow.png" ... /> -->
-
 <section id="home" class="container text-center py-5 home-section">
   <div class="container py-5 home-intro">
-      <div class="row align-items-center justify-content-center text-center text-md-start gx-15">
+    <div class="row align-items-center justify-content-center text-center text-md-start gx-15">
 
-      <!-- Left: Avatar without arrow -->
-<div class="col-12 col-md-4 d-flex justify-content-center mb-4 mb-md-0">
+      <!-- Left: Enhanced Avatar with Animated Border -->
+      <div class="col-12 col-md-4 d-flex justify-content-center mb-4 mb-md-0">
         <div class="avatar-wrapper">
+          <div class="avatar-glow"></div>
           <img src="assets/Me.png" alt="Avatar" class="avatar-img" />
         </div>
       </div>
 
-      <!-- Right: Text -->
-        <div class="col-12 col-md-6 mt-4 mt-md-0">
-        <h6 class="text-muted"><span class="text-light">Hello! I am Surya Prakash M</span></h6>
-        <h1 class="display-5 fw-bold mb-3">
-          Crafting logic like <br /><span class="text-info">poetry…</span>
+      <!-- Right: Text with Enhanced Typography -->
+      <div class="col-12 col-md-6 mt-4 mt-md-0">
+        <h6 class="greeting-text">
+          <span class="wave">👋</span>
+          <span class="text-light">Hello! I am Surya Prakash M</span>
+        </h6>
+        <h1 class="display-5 fw-bold mb-3 main-heading">
+          Crafting logic like <br />
+          <span class="gradient-text">poetry…</span>
         </h1>
-        <p class="text-white small fst-italic mb-4">
+        <p class="subtitle-text mb-4">
           Because beauty lives in both design and syntax
         </p>
         <div class="d-flex justify-content-center justify-content-md-start flex-wrap gap-3">
           <a href="assets/NewResume.pdf" class="custom-btn-outline" target="_blank">
-            📄 Download Resume
+            <span class="btn-icon">📄</span>
+            <span class="btn-text">Download Resume</span>
           </a>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- Role Description -->
-  <div class="mt-5">
-    <h4 class="fw-normal">I'm a <span class="text-primary">Software Engineer</span>.</h4>
-    <p>Currently, I’m working at <a href="https://www.payoda.com/" target="_blank" class="text-decoration-none text-info">Payoda</a>.</p>
-    <p class="text-light mx-auto" style="max-width: 600px;">
-Highly motivated Back-End Developer with expertise in the .NET framework and Python, actively seeking a 
-challenging role that allows me to contribute to innovative solutions while expanding into Data Science 
-and AI-driven projects. Eager to apply my backend development skills, growing knowledge in Data Science, and hands-on experience
- with LLMOps to collaborate with a forward-thinking, passionate development team.
-    </p>
+  <!-- Enhanced Role Description with Glass Effect -->
+  <div class="mt-5 role-description">
+    <div class="glass-card">
+      <h4 class="fw-normal">
+        I'm a <span class="text-primary role-highlight">Software Engineer</span>
+      </h4>
+      <p class="company-info">
+        Currently, I'm working at 
+        <a href="https://www.payoda.com/" target="_blank" class="company-link">Payoda</a>
+      </p>
+      <p class="bio-text text-light mx-auto">
+        Highly motivated Back-End Developer with expertise in .NET Core and FastAPI, possessing
+        strong knowledge in Prompt Engineering, LangChain, LLMOps, and interacting 
+        with Large Language Models (LLMs). Passionate about contributing to AI-driven
+        projects and developing efficient, scalable backend systems 
+        while collaborating with a forward-thinking and innovative team.
+      </p>
+    </div>
+  </div>
+
+  <!-- Animated Background Elements -->
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
   </div>
 </section>

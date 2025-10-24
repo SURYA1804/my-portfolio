@@ -1,62 +1,695 @@
 .work-section {
-  h2 {
-    font-weight: 600;
-    color: #ccffff;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+
+  // Section Header
+  .section-header {
+    margin-bottom: 4rem;
+    position: relative;
+    z-index: 1;
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      background: rgba(0, 255, 255, 0.1);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 50px;
+      color: #00ffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(10px);
+      animation: fadeInDown 0.8s ease;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #00ffff 0%, #00aaff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+      animation: fadeInUp 0.8s ease 0.2s backwards;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(90deg, transparent, #00ffff, transparent);
+        border-radius: 2px;
+      }
+    }
+
+    .section-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
   }
 
-  .card {
-    background-color: #111122;
+  // Timeline Layout
+  .timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, transparent, #00ffff, #7a3cbe, #00ffff, transparent);
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    animation: lineGrow 1.5s ease forwards;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  // Timeline Items
+  .timeline-item {
+    position: relative;
+    margin-bottom: 4rem;
+    animation: fadeInItem 0.8s ease backwards;
+
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+    &:nth-child(4) { animation-delay: 0.6s; }
+
+    // Left-aligned items
+    &.timeline-left {
+      padding-right: calc(50% + 60px);
+      text-align: right;
+
+      .timeline-marker {
+        right: calc(50% - 20px);
+      }
+
+      .work-card {
+        transform-origin: right center;
+      }
+    }
+
+    // Right-aligned items
+    &.timeline-right {
+      padding-left: calc(50% + 60px);
+      text-align: left;
+
+      .timeline-marker {
+        left: calc(50% - 20px);
+      }
+
+      .work-card {
+        transform-origin: left center;
+      }
+    }
+  }
+
+  // Timeline Markers
+  .timeline-marker {
+    position: absolute;
+    top: 30px;
+    z-index: 10;
+    animation: markerPulse 2s ease-in-out infinite;
+
+    .marker-outer {
+      width: 40px;
+      height: 40px;
+      background: rgba(26, 11, 46, 0.95);
+      border: 3px solid #00ffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.6),
+        inset 0 0 10px rgba(0, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .marker-inner {
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(135deg, #00ffff, #00aaff);
+      border-radius: 50%;
+      animation: markerInnerPulse 2s ease-in-out infinite;
+    }
+
+    .marker-glow {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(0, 255, 255, 0.4), transparent 70%);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: glowPulse 2s ease-in-out infinite;
+      z-index: 1;
+    }
+  }
+
+  // Work Cards with Glassmorphism
+  .work-card {
+    background: rgba(17, 17, 34, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
     border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    // Hover Effects
+    &:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: #00ffff;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+      .card-decoration-1 {
+        transform: translate(20px, -20px) scale(1.2);
+        opacity: 0.8;
+      }
+
+      .card-decoration-2 {
+        transform: translate(-20px, 20px) scale(1.2);
+        opacity: 0.8;
+      }
+
+      .icon-wrapper {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      .card-accent {
+        width: 100%;
+      }
+    }
+
+    // Card Header
+    .card-header-custom {
+      padding: 2rem 2rem 1rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 170, 255, 0.2));
+      border: 2px solid rgba(0, 255, 255, 0.4);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: linear-gradient(135deg, #00ffff, #7a3cbe);
+        border-radius: 16px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        opacity: 0.5;
+      }
+    }
+
+    .work-icon {
+      font-size: 2rem;
+      filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    .job-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #00ffff;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .company-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0;
+
+      .company-icon {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+
+    // Card Body
+    .card-body-custom {
+      padding: 0 2rem 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .job-description {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    // Card Footer
+    .card-footer-custom {
+      padding: 1.5rem 2rem;
+      background: rgba(0, 255, 255, 0.05);
+      border-top: 1px solid rgba(0, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .duration-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(122, 60, 190, 0.15));
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #00ffff;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+
+      .calendar-icon {
+        font-size: 1.1rem;
+        filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.5));
+      }
+
+      &:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+      }
+    }
+
+    .card-accent {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: linear-gradient(90deg, #00ffff, #7a3cbe, #ff00ff);
+      transition: width 0.4s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+
+    // Decorative Elements
+    .card-decoration {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.3;
+      transition: all 0.4s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .card-decoration-1 {
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, #00ffff, transparent);
+      top: -40px;
+      right: -40px;
+    }
+
+    .card-decoration-2 {
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, #7a3cbe, transparent);
+      bottom: -30px;
+      left: -30px;
+    }
+  }
+
+  // Alternative: Modern Card Grid Layout
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .work-card-modern {
+    background: rgba(17, 17, 34, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: cardSlideIn 0.6s ease backwards;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    .card-number {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(0, 255, 255, 0.1);
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .card-icon-large {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(0, 170, 255, 0.2));
+      border: 2px solid rgba(0, 255, 255, 0.4);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+
+      .icon-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #00ffff, #7a3cbe);
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .icon-text {
+        font-size: 2.5rem;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.5));
+      }
+    }
+
+    .card-content-modern {
+      position: relative;
+      z-index: 2;
+    }
+
+    .job-title-modern {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #00ffff;
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .company-name-modern {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+
+      .company-icon {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+    }
+
+    .job-description-modern {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-footer-modern {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(0, 255, 255, 0.1);
+    }
+
+    .duration-badge-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 1.2rem;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.15), rgba(122, 60, 190, 0.15));
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #00ffff;
+
+      .calendar-icon {
+        font-size: 1.1rem;
+      }
+    }
+
+    .card-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 255, 255, 0.1), rgba(122, 60, 190, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
 
     &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+      transform: translateY(-10px);
       border-color: #00ffff;
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 255, 255, 0.3);
+
+      .card-icon-large {
+        transform: scale(1.1) rotate(5deg);
+
+        .icon-bg {
+          opacity: 0.3;
+        }
+      }
+
+      .card-hover-overlay {
+        opacity: 1;
+      }
+
+      .card-number {
+        color: rgba(0, 255, 255, 0.2);
+      }
     }
   }
 
-  .card-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-    color: #00ffff;
-    display: flex;
-    align-items: center;
-
-    i {
-      margin-right: 8px;
+  // Animations
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  .card-text {
-    font-size: 0.95rem;
-    line-height: 1.5;
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .badge {
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-    background: linear-gradient(45deg, #036b6b, #6f00ff);
-    animation: pulseBadge 3s infinite ease-in-out;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
-    font-weight: 600;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  @keyframes lineGrow {
+    from {
+      height: 0;
+    }
+    to {
+      height: 100%;
+    }
   }
 
-  @keyframes pulseBadge {
+  @keyframes fadeInItem {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes markerPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes markerInnerPulse {
     0%, 100% {
       transform: scale(1);
       opacity: 1;
     }
     50% {
-      transform: scale(1.05);
-      opacity: 0.85;
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes glowPulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.3);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes cardSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 992px) {
+    .timeline-line {
+      left: 30px;
+    }
+
+    .timeline-item {
+      padding-left: 80px !important;
+      padding-right: 0 !important;
+      text-align: left !important;
+
+      &.timeline-left,
+      &.timeline-right {
+        .timeline-marker {
+          left: 10px !important;
+          right: auto !important;
+        }
+
+        .work-card {
+          transform-origin: left center;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section-header {
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .section-subtitle {
+        font-size: 1rem;
+      }
+    }
+
+    .work-card {
+      .card-header-custom {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+
+      .icon-wrapper {
+        width: 50px;
+        height: 50px;
+      }
+
+      .work-icon {
+        font-size: 1.5rem;
+      }
+
+      .job-title {
+        font-size: 1.2rem;
+      }
+
+      .card-body-custom {
+        padding: 0 1.5rem 1rem;
+      }
+
+      .card-footer-custom {
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    .work-grid {
+      grid-template-columns: 1fr;
     }
   }
 }
