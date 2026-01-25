@@ -12,7 +12,7 @@ export class WorkComponent {
           {
             title: 'Software Engineer',
             company: 'Payoda Technologies',
-            description: 'Working on Dotnet Core and MS SQL Server to build scalable backend systems, while also contributing to AI-related projects focused on implementing intelligent and automated solutions.',
+            description: 'Working on both AI-related projects—leveraging tools like LangChain, LangGraph, and Copilot Studio — as well as building scalable backend systems with .NET Core and MS SQL Server. My focus is on creating intelligent, automated solutions while ensuring robust and reliable backend architectures.',
             duration: 'Oct 2025 – Present'
           },
           {

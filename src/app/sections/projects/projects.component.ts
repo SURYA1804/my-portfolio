@@ -55,7 +55,51 @@ export class ProjectsComponent {
         'Real-time financial insights',
         'LangChain integration for context-aware responses'
       ]
-    }
+    },
+    {
+  title: 'Smart Website Comparison Assistant',
+  description: 'Built an AI-powered website comparison tool using LangChain and Streamlit. Users can upload a list of websites via Excel, which are then scraped in parallel with Playwright and embedded into ChromaDB vector stores. A two-stage Retrieval-Augmented Generation (RAG) pipeline powered by Groq Llama 3.3 delivers context-aware, hallucination-free comparisons in structured markdown tables. The system enables instant semantic analysis of multiple sites, helping users identify the best fit for their requirements with speed and clarity.',
+  image: 'assets/smartwebsitecomparisonassistant.png',
+  link: 'https://smartwebsitecomparisonassistant.streamlit.app/',
+  github: 'https://github.com/SURYA1804/Smart_Website_Comparison_Assistant',
+  year: '2026',
+  category: 'AI-Powered Application',
+  technologies: ['Python', 'Streamlit', 'LangChain', 'Playwright', 'ChromaDB', 'Groq Llama 3.3', 'BeautifulSoup'],
+  features: [
+    'Parallel website scraping with Playwright + asyncio',
+    'Vector store creation using ChromaDB',
+    'Two-stage RAG pipeline for accurate answers',
+    'Strict context enforcement (zero hallucinations)',
+    'Real-time scraping progress tracking',
+    'Markdown-formatted comparison tables and recommendations'
+  ]
+},
+{
+  title: 'SmartDoc Bot - RAG-Powered Document Q&A System',
+  description: 'An intelligent document chatbot powered by Retrieval-Augmented Generation (RAG), LangGraph, and Groq LLM. Upload PDFs and DOCX files, ask natural language questions, and get precise answers with source citations. SmartDoc Bot acts like a research assistant — helping students, researchers, and professionals quickly extract insights without scrolling through endless pages.',
+  image: 'assets/smartdocbot.png',
+  link: 'https://smartdocbot.streamlit.app',
+  github: 'https://github.com/SURYA1804/RAG-Chatbot-with-LangGraph',
+  year: '2026',
+  category: 'AI-Powered Application',
+  technologies: [
+    'Python',
+    'Streamlit',
+    'LangChain',
+    'LangGraph',
+    'ChromaDB',
+    'Groq LLM'
+  ],
+  features: [
+    'Multi-format support: PDF and DOCX document processing',
+    'Intelligent table extraction for structured data',
+    'Conversational context with memory for follow-up questions',
+    'Intent classification and query reformulation',
+    'Hybrid retrieval with relevance scoring',
+    'Source citations for trustworthy answers'
+    ]
+}
+
   ];
 
   // Calculate total unique technologies

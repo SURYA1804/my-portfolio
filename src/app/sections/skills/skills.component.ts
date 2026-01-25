@@ -40,18 +40,25 @@ export class SkillsComponent {
     },
     { 
       name: 'AI', 
-      level: 70, 
+      level: 80, 
       color: '#9b59b6', 
       icon: 'fa-solid fa-robot', 
       isImage: false 
     },
     { 
       name: 'LangChain', 
-      level: 60, 
+      level: 90, 
       color: '#e74c3c', 
       icon: 'fa-solid fa-link', 
       isImage: false 
-    }
+    },
+    {  
+    name: 'LangGraph',  
+    level: 85,  
+    color: '#3498db',  
+    icon: 'fa-solid fa-project-diagram',  
+    isImage: false  
+  }
   ];
 
   // Generate progress bar gradient
