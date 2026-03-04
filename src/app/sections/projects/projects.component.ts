@@ -102,7 +102,7 @@ export class ProjectsComponent {
 
 {
   title: 'ExcelLens - Excel Intelligence Platform',
-  description: 'An AI-powered Excel analytics platform that transforms raw spreadsheets into a queryable data warehouse. Upload multiple .xlsx files, auto-detect shared columns, build multi-level joins, and ask plain-English statistical questions. A LangGraph agent writes the SQL, executes it via pandas, and returns live interactive tables — handling any dataset size without context overflow. Built for analysts, researchers, and business users who want instant insights without writing a single line of SQL.',
+  description: 'An AI-powered Excel analytics platform that transforms raw spreadsheets into a conversational data warehouse. Upload multiple .xlsx files, auto-detect shared columns, build multi-level joins, and ask plain-English questions — including natural follow-ups like "What is his department?" or "Show their mobile numbers." A 6-node LangGraph agent resolves pronouns using conversation history, filters by primary keys, executes SQL via pandas, and returns live interactive tables — handling any dataset size without context overflow. Built for analysts, researchers, and business users who want instant insights without writing a single line of SQL.',
   image: 'assets/ExcelLens.jpeg',
   link: 'https://excellens1804.streamlit.app',
   github: 'https://github.com/SURYA1804/Excel_Stats_Analyzer.git',
@@ -119,16 +119,16 @@ export class ProjectsComponent {
     'OpenPyXL'
   ],
   features: [
+    'Conversational memory — resolves pronouns and back-references across turns using primary key tracking',
     'Multi-file Excel upload with auto schema detection',
     'Multi-level join builder: L2 pre-joins for indirectly connected datasets',
-    'Scale-safe RAG pipeline — pandas executes SQL, LLM never sees raw rows',
-    'Structured 5-node LangGraph agent with typed state and conditional routing',
+    'Scale-safe pipeline — pandas executes SQL, LLM never sees raw rows',
+    'Structured 6-node LangGraph agent with typed state and conditional routing',
     'Dynamic result tables with real column names from SQL output',
     'LLM-generated follow-up questions per answer for guided exploration',
     'One-click Excel export with styled Results and Info sheets'
   ]
 }
-
   ];
 
   // Calculate total unique technologies
