@@ -98,6 +98,35 @@ export class ProjectsComponent {
     'Hybrid retrieval with relevance scoring',
     'Source citations for trustworthy answers'
     ]
+},
+
+{
+  title: 'ExcelLens - Excel Intelligence Platform',
+  description: 'An AI-powered Excel analytics platform that transforms raw spreadsheets into a queryable data warehouse. Upload multiple .xlsx files, auto-detect shared columns, build multi-level joins, and ask plain-English statistical questions. A LangGraph agent writes the SQL, executes it via pandas, and returns live interactive tables — handling any dataset size without context overflow. Built for analysts, researchers, and business users who want instant insights without writing a single line of SQL.',
+  image: 'assets/ExcelLens.jpeg',
+  link: 'https://excellens1804.streamlit.app',
+  github: 'https://github.com/SURYA1804/Excel_Stats_Analyzer.git',
+  year: '2026',
+  category: 'AI-Powered Application',
+  technologies: [
+    'Python',
+    'Streamlit',
+    'LangGraph',
+    'LangChain',
+    'Groq LLM',
+    'SQLite',
+    'Pandas',
+    'OpenPyXL'
+  ],
+  features: [
+    'Multi-file Excel upload with auto schema detection',
+    'Multi-level join builder: L2 pre-joins for indirectly connected datasets',
+    'Scale-safe RAG pipeline — pandas executes SQL, LLM never sees raw rows',
+    'Structured 5-node LangGraph agent with typed state and conditional routing',
+    'Dynamic result tables with real column names from SQL output',
+    'LLM-generated follow-up questions per answer for guided exploration',
+    'One-click Excel export with styled Results and Info sheets'
+  ]
 }
 
   ];
