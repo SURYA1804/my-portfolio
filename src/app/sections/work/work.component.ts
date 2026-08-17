@@ -8,12 +8,17 @@ import { CommonModule } from '@angular/common';
 })
 export class WorkComponent {
   workItems = [
-    
+          {
+            title: 'Technical Developer',
+            company: 'DLL',
+            description: 'Currently working in .NET development and MS SQL Server, while also building AI-powered solutions using technologies such as LangChain, LangGraph, and Copilot Studio to solve real-world business use cases, automate processes, and improve operational efficiency.'    ,
+            duration: 'Aug 2026 – Present'
+          },
           {
             title: 'Software Engineer',
             company: 'Payoda Technologies',
-            description: 'Working on both AI-related projects—leveraging tools like LangChain, LangGraph, and Copilot Studio — as well as building scalable backend systems with .NET Core and MS SQL Server. My focus is on creating intelligent, automated solutions while ensuring robust and reliable backend architectures.',
-            duration: 'Oct 2025 – Present'
+            description: 'Worked on both AI-related projects—leveraging tools like LangChain, LangGraph, and Copilot Studio — as well as building scalable backend systems with .NET Core and MS SQL Server. My focus is on creating intelligent, automated solutions while ensuring robust and reliable backend architectures.',
+            duration: 'Oct 2025 – July 2026 (10 Months)'
           },
           {
             title: 'Software Engineer Trainee',
