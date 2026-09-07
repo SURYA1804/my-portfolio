@@ -128,7 +128,33 @@ export class ProjectsComponent {
     'LLM-generated follow-up questions per answer for guided exploration',
     'One-click Excel export with styled Results and Info sheets'
   ]
-}
+},
+{
+  title: 'PRflow.AI Agent - Autonomous Changelog & PR Automation for GitHub',
+  description: 'A centralized GitHub App that turns every push into documentation, automatically. PRflow.AI listens for push and pull_request_review events, uses an LLM to generate a changelog entry for each commit, and maintains a single long-lived pull request per repository — reusing it across pushes, re-running with reviewer feedback when changes are requested, and opening a fresh PR on the same branch once the previous one merges. Built as a production-grade, plug-and-play DevOps utility with zero developer intervention required.',
+  image: 'assets/prflowai.png',
+  link: 'https://github.com/apps/prflow-ai-agent',
+  github: 'https://github.com/SURYA1804/PR_FLOW.AI',
+  year: '2026',
+  category: 'AI-Powered Application',
+  technologies: [
+    'Python',
+    'FastAPI',
+    'LangGraph',
+    'Groq LLM',
+    'GitHub Apps API'
+  ],
+  features: [
+    'Webhook-driven backend listening for push and pull_request_review events',
+    'One persistent branch and one long-lived PR reused across pushes per repo',
+    'Per-commit changelog files with automatic diff summarization via LLM',
+    'Human-in-the-loop feedback: reviewer "Request changes" re-runs the agent and updates the same PR',
+    'Automatic PR recycling — reopens a fresh PR on the same branch once merged',
+    'Bot-loop protection via branch-name and diff-content filtering',
+    'Decoupled email microservice for milestone notifications to committers',
+    'Dual-provider LLM support (Groq / NVIDIA) via a single config toggle'
+  ]
+},
   ];
 
   // Calculate total unique technologies
